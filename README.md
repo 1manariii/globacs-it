@@ -1,54 +1,77 @@
-# React + TypeScript + Vite
+## 🚀 Запуск проекта
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Чтобы запустить проект, выполните следующие шаги:
 
-Currently, two official plugins are available:
+1. Клонируйте репозиторий:
+   ```bash
+     git clone https://github.com/1manariii/web-template
+   ```
+2. Перейдите в директорию проекта:
+   ```bash
+     cd web-template
+   ```
+3. Установите зависимости:
+   ```bash
+     npm install
+   ```
+4. Запустите проект:
+   ```bash
+     npm run dev
+   ```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔧 Интерфейс
+Для изменения элемента:
+1. Список сотрудников загружаеться
+2. Получение полной информации о сотруднике при клике на карточку
+3. Поиск по имени 
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📦 Зависимости
+Убедитесь, что у вас установлен Node.js (рекомендуется последняя версия).
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Для установки зависимостей используется npm.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🌐 Доступ к проекту
+После запуска проект будет доступен по адресу:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+http://localhost:3000 (или другому порту, если 3000 занят).
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+##💡 Дополнительно
+Если вы хотите собрать проект для production, выполните:
+   ```bash
+     npm run build
+   ```
+
+##💡 Имитация баз данных для ТЗ был(укоротил кол-во элементов)
+users.json
+  ```json
+  [
+	{
+		"name": "Ferdinand Carney",
+		"phone": "(640) 447-3254",
+		"email": "in@aol.net",
+		"address": "563-4648 Curabitur Street",
+		"position_name": "Mauris eu turpis. Nulla aliquet. Proin velit. Sed malesuada augue",
+		"department": "nisi magna sed dui. Fusce aliquam, enim nec tempus scelerisque,",
+		"hire_date": "Dec 24, 2020"
+	},
+	{
+		"name": "Deborah Gonzales",
+		"phone": "1-258-431-9358",
+		"email": "hendrerit@icloud.net",
+		"address": "705 Pede Avenue",
+		"position_name": "dui nec urna suscipit nonummy. Fusce fermentum fermentum arcu. Vestibulum",
+		"department": "Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus",
+		"hire_date": "Oct 25, 2020"
+	},
+	{
+		"name": "Adrienne Mason",
+		"phone": "1-395-514-3388",
+		"email": "erat.eget.ipsum@icloud.ca",
+		"address": "963 Montes, Avenue",
+		"position_name": "diam eu dolor egestas rhoncus. Proin nisl sem, consequat nec,",
+		"department": "interdum. Curabitur dictum. Phasellus in felis. Nulla tempor augue ac",
+		"hire_date": "Nov 15, 2020"
+	}
+  ```
+
