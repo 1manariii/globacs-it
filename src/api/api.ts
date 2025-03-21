@@ -16,8 +16,8 @@ export const getAllUsers = async ({ name, id }: IProps): Promise<IUser[] | IUser
         }
 
         if (name !== undefined) {
-            const users = data.filter((user) => user.name.includes(name));
-            return users; 
+            const { data } = await axios.get<IUser[]>(`http://localhost:8000?term=${name}`);
+            return data; 
         }
 
         return data;
