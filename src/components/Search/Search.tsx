@@ -18,17 +18,7 @@ const Search = () => {
     }
 
     useEffect(()=>{
-        let timeoutId: number | null = null;
-        
-        return  () => {
-            if (timeoutId) {
-                clearTimeout(timeoutId);
-            }
-    
-            timeoutId = setTimeout(() => {
-                fetchUsers()
-            }, 500);
-        };
+        fetchUsers()
     }, [search])
     return (
         <div className='wrapper-search'>
