@@ -22,6 +22,10 @@ const Modal = () => {
         }
     };
 
+    const handleContentClick = (event: React.MouseEvent<HTMLDivElement>) => {
+        event.stopPropagation();
+    };
+
     const handleClose = () => {
         setIsShow(false)
     }
@@ -30,8 +34,8 @@ const Modal = () => {
         fetchOneUser()
     }, [activeId])
     return (
-        <div className={`wrapper-modal ${isShow ? "open" : ""}`}>
-            <div className='modal'>
+        <div className={`wrapper-modal ${isShow ? "open" : ""}`} onClick={handleClose}>
+            <div className='modal' onClick={handleContentClick}>
                 <h2>
                     {user?.name}
                     <button onClick={handleClose}>
