@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-
+import Option from '../Option/Option';
 import './Modal.css';
 import { getAllUsers } from '../../api/api';
 import { IUser } from '../../types/user';
@@ -43,26 +43,12 @@ const Modal = () => {
                     </button>
                 </h2>
                 <div className='modal-options'>
-                    <div className='modal-option'>
-                        <span className="key">Телефон:</span>
-                        <span className='value'>{user?.phone}</span>
-                    </div>
-                    <div className='modal-option'>
-                        <span className="key">Почта:</span>
-                        <span className='value'>{user?.email}</span>
-                    </div>
-                    <div className='modal-option'>
-                        <span className="key">Дата приема:</span>
-                        <span className='value'>{user?.hire_date}</span>
-                    </div>
-                    <div className='modal-option'>
-                        <span className="key">Должность:</span>
-                        <span className='value'>{user?.position_name}</span>
-                    </div>
-                    <div className='modal-option'>
-                    <span className="key">Подразделение:</span>
-                    <span className='value'>{user?.department}</span>
-                </div> 
+            
+                    <Option keyT='Телефон' value={user?.phone} />
+                    <Option keyT='Почта' value={user?.email} />
+                    <Option keyT='Дата приема' value={user?.hire_date} />
+                    <Option keyT='Должность' value={user?.position_name} />
+                    <Option keyT='Подразделение' value={user?.department} />
                 </div>
 
                 <div className='modal-description'>
