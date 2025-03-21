@@ -1,19 +1,28 @@
 import axios from "axios"
 import { IUser } from "../types/user"
 
-export const getAllUsers = async ():Promise<IUser[]> => {
-    const {data} = await axios.get<IUser[]>('http://localhost:8000/')
-    return data
+interface IProps {
+    name?: string;
+    id?: number;
 }
 
-export const getOneUser = async (id:number | null):Promise<IUser> => {
-    const {data} = await axios.get<IUser[]>('http://localhost:8000/')
-    const users = await data.filter((user, userId)=> userId===id)
-    return users[0]
-}
+export const getAllUsers = async ({ name, id }: IProps): Promise<IUser[] | IUser | null> => {
+    try {
+        const { data } = await axios.get<IUser[]>('http://localhost:8000/');
 
-export const getSearchUser = async (name:string):Promise<IUser[]> => {
-    const {data} = await axios.get<IUser[]>('http://localhost:8000/')
-    const users = await data.filter((user)=> user.name.includes(name))
-    return users
-}
+        if (id !== undefined) {
+            const user = data.find((user, userId) => userId === id);
+            return user || null;
+        }
+
+        if (name !== undefined) {
+            const users = data.filter((user) => user.name.includes(name));
+            return users; 
+        }
+
+        return data;
+    } catch (error) {
+        console.error('Ошибка при получении пользователей:', error);
+        throw error; 
+    }
+};

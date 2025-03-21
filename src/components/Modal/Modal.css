@@ -83,11 +83,7 @@
     margin: 0;
 }
 
-.modal-phone,
-.modal-mail,
-.modal-date,
-.modal-greade,
-.modal-subgreade {
+.modal-option {
     display: flex;
     flex-direction: row;
     gap: 40px;

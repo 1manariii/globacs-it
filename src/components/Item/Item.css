@@ -20,7 +20,7 @@
     font-weight: 700;
 }
 
-.list-item-phone, .list-item-mail {
+.list-item-info {
     display: flex;
     gap: 14px;
     flex-direction: row;

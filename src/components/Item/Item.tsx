@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import './Item.css';
-import { MyContext } from '../../App';
 import { IUser } from '../../types/user';
+import { MyContext } from '../../context/context';
 
 interface IProps {
     user: IUser;
@@ -19,11 +19,11 @@ const Item = ({user, id}:IProps) => {
     return (
         <div className="wrapper-list-item" onClick={onClick}>
             <h2 className='list-item-title'>{user.name}</h2>
-            <span className='list-item-phone'>
+            <span className='list-item-info'>
                 <img src="/phone.svg" alt="Логотип поиска" />
                 {user.phone}
             </span>
-            <span className="list-item-mail">
+            <span className="list-item-info">
                 <img src="/mail.svg" alt="Логотип почты" />
                 {user.email}
             </span>
