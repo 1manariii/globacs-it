@@ -8,7 +8,7 @@
    ```
 2. Перейдите в директорию проекта:
    ```bash
-     cd web-template
+     cd globacs-it
    ```
 3. Установите зависимости:
    ```bash
@@ -73,5 +73,6 @@ users.json
 		"department": "interdum. Curabitur dictum. Phasellus in felis. Nulla tempor augue ac",
 		"hire_date": "Nov 15, 2020"
 	}
+]
   ```
 
