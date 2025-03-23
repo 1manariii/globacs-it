@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import './Item.css';
 import { IUser } from '../../types/user';
-import { MyContext } from '../../context/context';
+import { MyContext } from '../../context/Context';
 
 interface IProps {
     user: IUser;
