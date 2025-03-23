@@ -48,7 +48,7 @@ const Context = () => {
     fetchUsers()
   }, [])
   return (
-    <MyContext.Provider value={{ isShow, setIsShow, users, setUsers, activeId, setActiveId, error, page, setPage }}>
+    <MyContext.Provider value={{ isShow, setIsShow, users, setUsers, activeId, setActiveId, error, setError, page, setPage }}>
     <header>
       <Search />
     </header>

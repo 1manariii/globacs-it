@@ -3,10 +3,11 @@ import Option from '../Option/Option';
 import './Modal.css';
 import { getAllUsers } from '../../api/api';
 import { IUser } from '../../types/user';
-import { MyContext } from '../../context/context';
+import { MyContext } from '../../context/Context';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 const Modal = () => {
-    const { isShow, setIsShow, activeId } = useContext(MyContext);
+    const { isShow, setIsShow, activeId, setError, error } = useContext(MyContext);
     const [user, setUser] = useState<null | IUser>(null)
 
     const fetchOneUser = async () => {
@@ -17,8 +18,8 @@ const Modal = () => {
             } else {
                 setUser(null); 
             }
-        } catch (error) {
-            console.error('Ошибка при получении пользователя:', error);
+        } catch (err) {
+            setError(err instanceof Error ? err.message as string : "Произошла неизвестная ошибка");
         }
     };
 
@@ -33,6 +34,15 @@ const Modal = () => {
     useEffect(()=>{
         fetchOneUser()
     }, [activeId])
+    if(error) {
+        return (
+            <div className={`wrapper-modal ${isShow ? "open" : ""}`} onClick={handleClose}>
+                <div className='modal' onClick={handleContentClick}>
+                    <ErrorMessage error={error} />
+                </div>
+            </div>
+        )
+    }
     return (
         <div className={`wrapper-modal ${isShow ? "open" : ""}`} onClick={handleClose}>
             <div className='modal' onClick={handleContentClick}>
