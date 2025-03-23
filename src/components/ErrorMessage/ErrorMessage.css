@@ -1,0 +1,10 @@
+.wrapper__error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wrapper__error h3 {
+    color: red;
+}

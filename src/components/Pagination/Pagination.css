@@ -1,0 +1,23 @@
+.wrapper__pagination {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+
+.wrapper__pagination button {
+    background-color: rgba(255, 255, 255, 1);
+    font-weight: 600;
+    border: none;
+    padding: 8px;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.wrapper__pagination .active-page {
+    box-shadow: 0px 0px 4px 0px #432eabb8;
+}
+
+.wrapper__pagination button:hover {
+    box-shadow: 0px 0px 2px 0px #432eab91;
+}

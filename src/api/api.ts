@@ -6,7 +6,7 @@ interface IProps {
     id?: number;
 }
 
-export const getAllUsers = async ({ name, id }: IProps): Promise<IUser[] | IUser | null> => {
+export const getAllUsers = async ({ name, id }: IProps): Promise<IUser[] | IUser | null | string> => {
     try {
         const { data } = await axios.get<IUser[]>('http://localhost:8000/');
 
@@ -21,8 +21,10 @@ export const getAllUsers = async ({ name, id }: IProps): Promise<IUser[] | IUser
         }
 
         return data;
-    } catch (error) {
-        console.error('Ошибка при получении пользователей:', error);
-        throw error; 
+    } catch (error:unknown) {
+        if (error instanceof Error) {
+            throw new Error(error.message);
+        }
+        throw new Error("Произошла неизвестная ошибка");
     }
 };
